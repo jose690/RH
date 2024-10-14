@@ -1,0 +1,55 @@
+@{
+    ViewData["Title"] = "Login Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Pinegrow - TailwindCSS Blocks Template</title>
+        <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.0.2/dist/tailwind.min.css">
+        <script>/* Pinegrow Interactions, do not remove */ /*(function(){try{if(!document.documentElement.hasAttribute('data-pg-ia-disabled')) { window.pgia_small_mq=typeof pgia_small_mq=='string'?pgia_small_mq:'(max-width:767px)';window.pgia_large_mq=typeof pgia_large_mq=='string'?pgia_large_mq:'(min-width:768px)';var style = document.createElement('style');var pgcss='html:not(.pg-ia-no-preview) [data-pg-ia-hide=""] {opacity:0;visibility:hidden;}html:not(.pg-ia-no-preview) [data-pg-ia-show=""] {opacity:1;visibility:visible;display:block;}';if(document.documentElement.hasAttribute('data-pg-id') && document.documentElement.hasAttribute('data-pg-mobile')) {pgia_small_mq='(min-width:0)';pgia_large_mq='(min-width:99999px)'} pgcss+='media ' + pgia_small_mq + '{ html:not(.pg-ia-no-preview) [data-pg-ia-hide="mobile"] {opacity:0;visibility:hidden;}html:not(.pg-ia-no-preview) [data-pg-ia-show="mobile"] {opacity:1;visibility:visible;display:block;}}';pgcss+='media ' + pgia_large_mq + '{html:not(.pg-ia-no-preview) [data-pg-ia-hide="desktop"] {opacity:0;visibility:hidden;}html:not(.pg-ia-no-preview) [data-pg-ia-show="desktop"] {opacity:1;visibility:visible;display:block;}}';style.innerHTML=pgcss;document.querySelector('head').appendChild(style);}}catch(e){console&&console.log(e);}})()*/</script>
+        <meta name="description" content="Pinegrow Web Editor - SAAS TailwindCSS Template">
+    </head>
+    <body class="font-light text-gray-700">
+        <div class="flex h-16 justify-end"><a href="@Url.Action("index")"><button type="button" class="bg-blue-600 font-medium mr-5 mt-5 px-6 py-2 rounded-md text-center text-white w-20 hover:bg-blue-700">Inicio</button></a>
+        </div>
+        <section class="bg-gray-50 py-24 text-gray-500">
+            <div class="container mx-auto px-4">
+                <div class="mx-auto md:w-9/12 xl:w-5/12">
+                    <div class="bg-white px-6 py-12 w-full sm:px-12 lg:py-16">
+                        <h2 class="flex font-medium justify-center mb-2 text-3xl text-gray-900">Iniciar sesión</h2>
+                        <form> 
+                            <div class="flex mb-4 text-sm">
+                                <span class="bg-gray-50 border border-gray-300 border-r-0 inline-flex items-center px-3 py-2 rounded-l-md text-gray-600"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                        <g>
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"></path>
+                                        </g>
+                                    </svg></span>
+                                <input type="email" class="block border border-gray-300 flex-1 px-3 py-2 rounded-r-md w-full" placeholder="Correo" aria-label="Email" required>
+                            </div>
+                            <div class="flex mb-4 text-sm">
+                                <span class="bg-gray-50 border border-gray-300 border-r-0 inline-flex items-center px-3 py-2 rounded-l-md text-gray-600"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                        <g>
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M10.758 11.828l7.849-7.849 1.414 1.414-1.414 1.415 2.474 2.474-1.414 1.415-2.475-2.475-1.414 1.414 2.121 2.121-1.414 1.415-2.121-2.122-2.192 2.192a5.002 5.002 0 0 1-7.708 6.294 5 5 0 0 1 6.294-7.708zm-.637 6.293A3 3 0 1 0 5.88 13.88a3 3 0 0 0 4.242 4.242z"></path>
+                                        </g>
+                                    </svg></span>
+                                <input type="password" class="block border border-gray-300 flex-1 px-3 py-2 rounded-r-md w-full" placeholder="Contraseña" aria-label="Password" required>
+                            </div>                             
+                            <div class="flex items-center justify-center my-5">
+                                <a href="" class="block ml-2 text-sm">¿Olvidaste tu contraseña?</a>
+                            </div>
+                            <button type="submit" class="bg-blue-600 font-medium hover:bg-blue-700 inline-block px-6 py-2 rounded-md text-center text-white w-full">Iniciar sesión</button>
+                            <div class="flex items-center justify-center mb-4 mt-5">
+                                <p>¿No tienes cuenta?</p><a href="@Url.Action("registro")" class="block ml-2 text-sm">Registrarse</a>
+                            </div>                             
+                        </form>
+                    </div>
+                </div>                 
+            </div>
+        </section>
+        <script src="pgia/lib/pgia.js"></script>
+    </body>
+</html>
