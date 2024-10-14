@@ -13,8 +13,6 @@ builder.Services.AddDbContext<TSEContext>(options =>
 builder.Services.AddDbContext<OferenteContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("practicantesConnection")));
 
-builder.Services.AddControllersWithViews();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

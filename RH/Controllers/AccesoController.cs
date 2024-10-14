@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 using RH.Data;
+using Microsoft.Data.SqlClient;
 
 public class UsuarioController : Controller
 {
@@ -36,7 +37,8 @@ public class UsuarioController : Controller
 
         // Busca el usuario en la base de datos usando EF
         var usuario = await _context.TSE
-            .FirstOrDefaultAsync(u => u.Cedula == cedula); // Asegúrate de que el modelo tenga la propiedad Cedula
+            .FromSqlInterpolated($"EXEC sp_ObtenerDatosPorCedula_JoseGuzman {cedula}")
+            .FirstOrDefaultAsync(); 
 
         if (usuario == null)
         {
