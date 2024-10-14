@@ -15,7 +15,7 @@ ViewData["Title"] = "Registro Page";
         <script src="pgia/lib/pgia.js"></script>
     </head>
     <body class="font-light text-gray-700">
-        <div class="flex h-16 justify-end"><a href="@Url.Action(" ndex")"><button type="button" class="bg-blue-600 font-medium mr-5 mt-5 px-6 py-2 rounded-md text-center text-white w-20 hover:bg-blue-700">Inicio</button></a>
+        <div class="flex h-16 justify-end"><a href="@Url.Action("Index")"><button type="button" class="bg-blue-600 font-medium mr-5 mt-5 px-6 py-2 rounded-md text-center text-white w-20 hover:bg-blue-700">Inicio</button></a>
         </div>
         <section class="bg-gray-50 pt-0 text-gray-500">
             <div class="container mx-auto px-4">
@@ -35,8 +35,13 @@ ViewData["Title"] = "Registro Page";
                             <div class="mb-4 text-sm" id="id">
                                 <label for="cedula" class="block border-gray-300 flex-1 px-3 py-2 rounded-r-md w-full">Identificación</label>
                                 <div class="flex">
-                                    <input type="text" id="cedula" class="block border border-gray-300 flex-1 mr-5 px-3 py-2 rounded-r-md w-full" placeholder="01-0123-0123" aria-label="Email" required>
-                                    <button type="submit" id="buscarBtn" class="bg-blue-600 font-medium inline-block px-6 py-2 rounded-md text-center text-white w-3/12 hover:bg-blue-700">Buscar</button>
+                                    @* <input type="text" id="cedula" class="block border border-gray-300 flex-1 mr-5 px-3 py-2 rounded-r-md w-full" placeholder="01-0123-0123" aria-label="Email" required>
+                                    <button type="submit" id="buscarBtn" class="bg-blue-600 font-medium inline-block px-6 py-2 rounded-md text-center text-white w-3/12 hover:bg-blue-700">Buscar</button> *@
+                                <form asp-controller="Acceso" asp-action="BuscarUsuario" method="get">
+                                    <input type="text" name="cedula" placeholder="Enter Cedula" />
+                                    <input type="text" name="tipoIdentificacion" placeholder="Enter Tipo Identificacion" />
+                                    <button type="submit">Buscar Usuario</button>
+                                </form>
                                 </div>
                             </div>
                             <div class="flex">
@@ -71,7 +76,7 @@ ViewData["Title"] = "Registro Page";
                             </div>                             
                             <button type="submit" id="registrarBtn" class="bg-blue-600 font-medium hover:bg-blue-700 inline-block px-6 py-2 rounded-md text-center text-white w-full">Registrarse</button>
                             <div class="flex items-center justify-center mb-4 mt-5">
-                                <p>¿Ya tienes cuenta?</p><a href="@Url.Action(" ogin")" class="block ml-2 text-sm">Iniciar sesión</a>
+                                <p>¿Ya tienes cuenta?</p><a href="@Url.Action("Login")" class="block ml-2 text-sm">Iniciar sesión</a>
                             </div>                             
                         </form>
                     </div>

@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 using RH.Data;
 using Microsoft.Data.SqlClient;
 
-public class UsuarioController : Controller
+public class AccesoController : Controller
 {
     private readonly TSEContext _context;
     private readonly OferenteContext _context2;
 
-    public UsuarioController(TSEContext context, OferenteContext context2)
+    public AccesoController(TSEContext context, OferenteContext context2)
     {
         _context = context;
         _context2 = context2;
@@ -26,28 +26,27 @@ public class UsuarioController : Controller
         return View();
     }
 
-    [HttpPost]
-    public async Task<IActionResult> BuscarUsuario(string cedula, string tipoIdentificacion)
+    public async Task<IActionResult> BuscarUsuario([FromQuery] string cedula, [FromQuery] string tipoIdentificacion)
     {
         if (tipoIdentificacion != "Cédula de identificación")
         {
             ModelState.AddModelError(string.Empty, "Solo puede buscar con Cédula de Identificación.");
-            return View("Registro");
+            return View("Home/Registro");
         }
 
         // Busca el usuario en la base de datos usando EF
         var usuario = await _context.TSE
             .FromSqlInterpolated($"EXEC sp_ObtenerDatosPorCedula_JoseGuzman {cedula}")
-            .FirstOrDefaultAsync(); 
+            .ToListAsync(); 
 
         if (usuario == null)
         {
             ModelState.AddModelError(string.Empty, "La cédula no existe.");
-            return View("Registro");
+            return View("Home/Registro");
         }
 
         // Devuelve la vista de registro con el usuario encontrado
-        return View("Registro", usuario);
+        return View("Home/Registro", usuario);
     }
 
     [HttpPost]
