@@ -117,6 +117,4 @@ public class HomeController : Controller
             return Json(new { success = false, message = ex.Message });
         }
     }
-
-
 }
