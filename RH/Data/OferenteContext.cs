@@ -1,9 +1,25 @@
 using Microsoft.EntityFrameworkCore;
+using RH.Models;
 
 namespace RH.Data
 {
-    public class OferenteContext(DbContextOptions<OferenteContext> options) : DbContext(options)
+    public class OferenteContext : DbContext
     {
-        public DbSet<Usuario> Oferente { get; set; }
+        public OferenteContext()
+        {
+        }
+        public OferenteContext(DbContextOptions<OferenteContext> options) : base(options)
+        {
+        }
+
+        // Define la tabla Oferente con el modelo de datos Usuario
+        public DbSet<Oferente> Oferentes { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Mark Usuario as keyless
+            modelBuilder.Entity<Oferente>().HasNoKey();
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
