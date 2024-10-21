@@ -63,7 +63,7 @@ public class HomeController : Controller
         string generoTexto = "Desconocido";
         if (user.Genero != null)
         {
-            generoTexto = user.Genero == "1" ? "Masculino" : user.Genero == "2" ? "Femenino" : "Desconocido";
+            generoTexto = user.Genero == "1" ? "M" : user.Genero == "2" ? "F" : "Desconocido";
         }
 
         return Json(new
